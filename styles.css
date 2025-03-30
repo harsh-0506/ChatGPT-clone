@@ -1,0 +1,331 @@
+/* General Reset */
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+/* Style for Header */
+header{
+    /* display : flex : aligns items in a row*/
+    display: flex;
+    /* flex-direction: column; */
+    
+    /* justify-content: space-between: Places the logo and navigation at opposite ends. */
+    justify-content: space-between;
+
+    /* align-items: center: Vertically centers the items. */
+    align-items: center;     /* pehle openAI logo aur nav bar vertically ek level pr nahi  the matlab uper niche the, jab humne align items : center kiya to wo same line me aa gaye */
+
+
+    /* padding : adds space inside the header */
+    padding: 20px 50px;    /*before applying padding items inside the header were at the corner of the page, after padding they were spaced from all sides*/
+    
+    background-color: #111;
+
+    color: white;
+}
+
+
+
+/* Style for logo */
+
+.logo{
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Style for Navigation */
+nav ul{
+    /* removing bullets from the list */
+    list-style: none;
+
+    display: flex;
+
+    /* GAP: 20px; :display items with spacing */
+    gap: 20px;
+}
+
+nav ul li a{
+    /* Removes underline */
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 1rem;
+
+    /* the change in color on hover will be in 0.3s */
+    transition: color 0.3s;   
+}
+
+/* Adding Hover effect */
+nav ul li a:hover{
+    color: #00c4ff;
+}
+
+
+/* Responsive Header for Smaller Screens */
+@media (max-width: 768px) {
+    header {
+        /* flex-direction: column; */
+        align-items: center;
+        padding: 15px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    /* nav ul{
+        flex-direction: column;
+        gap: 10px;
+    } */
+
+    /* nav a {
+        font-size: 1rem;
+        padding: 10px 0;
+    } */
+
+    
+    
+    /* nav ul {
+        display: none;      // Initially hide the navigation links
+    } */
+    
+
+    /* nav ul.active {
+        display: flex;           //Show navigation links when active
+    } */
+}
+
+
+
+
+/* Hero Section */
+.hero{
+
+    text-align: center;
+
+    padding: 100px 20px;
+    
+    /* background: linear-gradient  : sets a gradient background */
+    /* "To bottom right" means the gradient starts at the top-left corner of the element and ends at the bottom-right corner. */
+    /* #1a1a1a : This is the starting color of the gradient.*/
+    /* #333 This is the ending color of the gradient. */
+    background: linear-gradient(to bottom right, #1a1a1a , #333) ;
+}
+
+.hero h1{
+    font-size: 3rem;
+    /* margin-bottom: 20px; : gives a bottom margin to h1  */
+    margin-bottom: 20px;
+}
+
+.hero p{
+
+    font-size: 1.2rem;
+
+    margin-bottom: 30px;
+}
+
+.hero button{
+    /* adds space inside the button or increases the button area */
+    padding: 15px 30px ;
+
+    font-size: 1rem;
+
+    color: #fff;
+
+    background-color: #00c4ff;
+
+    /* removes border */
+    border: none;
+
+    /* makes edge rounded */
+    border-radius: 5px;
+
+    /* cursor: Changes the mouse pointer to a hand when hovering. */
+    cursor: pointer;
+
+    transition: background-color 0.3s ;
+}
+
+.hero button:hover{
+    background-color: #0099cc;
+}
+
+
+/* Features Section */
+.features {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background-color: #f9f9f9;
+    
+    color: #111;
+}
+
+
+.features h2 {
+    font-size: 2.5rem;
+
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: flex;
+
+    /* alligns grid items to centre of the page */
+    justify-content: center;
+
+    gap: 20px;
+
+    /* flex-wrap: wrap: Ensures the items wrap to the next row on smaller screens */
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    width: 300px;
+    /* BOX-SHADOW : Adds a shadow around the element, giving it a slightly elevated or 3D look. */
+
+    /* Syntax of box-shadow : box-shadow: offset-x offset-y blur-radius spread-radius color;   */
+
+    /* offset-x: Horizontal distance of the shadow. 0 means no horizontal shift.  */
+
+    /* offset-y: Vertical distance of the shadow. 4px means the shadow is shifted 4 pixels downward  */
+
+    /* blur-radius: Controls the blur effect of the shadow. 6px makes the shadow softer and less defined */
+
+    /* spread-radius: Controls the size of the shadow. Not included here, so it defaults to */
+
+    /* color: The shadow's color, defined as rgba(0, 0, 0, 0.1), a very light black with 10% opacity. */
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+
+    /* transition :  Defines how and how quickly properties change over time when hovered or interacted with */
+
+    /* Syntax : transition: property duration timing-function delay; */
+
+    /* property: Specifies which CSS properties the transition applies to (transform and box-shadow here). */
+
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+}
+
+.feature-item:hover {
+    /* Moves the feature item upwards by 5 pixels */
+
+    /* Syntax : transform: translate(x, y); */
+
+    /* translateY(-5px): Moves the element 5 pixels upward along the vertical axis */
+    /* Positive values move it downward, and negative values move it upward. */
+
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+/* Adjusting the Features Section for Smaller Screens */
+
+
+/* The styles inside this block will apply to devices with a screen width of 768px or less (e.g., tablets and phones). */
+
+@media (max-width: 768px) {
+    .features-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item {
+
+        /* width: 90%: Makes the feature item take up most of the screen width on smaller devices */
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* Footer Section */
+.footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+
+    /* max-width: Limits the width of the footer content to 800px */
+    max-width: 800px;
+
+    /* margin: 0 auto: Centers the content horizontally. */
+    margin: 0 auto;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #00c4ff;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #0099cc;
+}
+
+/* Adjusting the Footer for Smaller Screens */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 10px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-links li {
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+
